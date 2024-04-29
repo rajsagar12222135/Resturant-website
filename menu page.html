@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #c9f2ea;
+    /* background-image: url('21.jpg'); */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+ header {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+  /* color: #fff; */
+  text-align: center;
+  padding: 20px 0;
+}
+  
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header img {
+    max-width: 150px; /* Adjust the value as needed */
+    height: auto;
+  }
+  
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #f9f5f5eb;
+    font-weight: bold;
+  }
+  #btn{
+    
+  border: solid; 
+ border-radius: 10px;
+  color: #ebf0ec;
+  background-color:#45a049 ;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f8f8f8; */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        #menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .menu-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px;
+            width: 200px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .menu-item p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .menu-item button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        a:hover {
+            color: rgb(232, 182, 43);
+        }
+        .background-image {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideshow 8s infinite;
+    z-index: -1;
+  }
+        footer {
+    background-color:rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1><img src="logo.png" alt="Flavour Fusion"></h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <!-- <li><a href="menu page.html">Menu</a></li> -->
+              <li><a href="reservation.html">Reserve your table</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    
+    <h1>Restaurant Menu</h1>
+    <div id="menu">
+        <!-- Menu items will be dynamically generated here -->
+    </div>
+    <a href="cart.html"><button id="btn" type="button">View Cart</button></a>
+    <script>
+        const menuItems = [
+            { name: "Burger", price: 10 },
+            { name: "Pizza", price: 12 },
+            { name: "Salad", price: 8 },
+            { name: "Pasta", price: 14 },
+            { name: "Chicken Wings", price: 20 },
+            { name: "Shrimp Cocktail", price: 12 },
+            { name: "Grilled Salmon", price: 8 },
+            { name: "Steak Frites", price: 14 },
+            { name: "Classic Burger", price: 10 },
+            { name: "Chicken Alfredo", price: 12 },
+            { name: "Chocolate Lava Cake", price: 8 },
+            { name: "New York Cheesecake", price: 14 },
+            { name: "Tiramisu", price: 10 },
+            { name: "Fruit Tart", price: 12 },
+            { name: "Key Lime Pie", price: 8 },
+            { name: "Soft Drinks", price: 14 },
+            { name: "Ice Tea", price: 10 },
+            { name: "Smoothies", price: 12 },
+            { name: "Craft Beer", price: 8 },
+            { name: "Red Wine", price: 14 },
+            { name: "Samosa", price: 10 },
+            { name: "Chicken Pizza", price: 12 },
+            { name: "Ice cream", price: 8 },
+            { name: "Fruit Salad", price: 14 }
+        ];
+
+        function displayMenu() {
+            const menuContainer = document.getElementById('menu');
+
+            menuItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.classList.add('menu-item');
+                menuItem.innerHTML = `
+                    <h2>${item.name}</h2>
+                    <p>$${item.price}</p>
+                    <button onclick="addToCart('${item.name}', ${item.price})">Add to Cart</button>
+                `;
+                menuContainer.appendChild(menuItem);
+            });
+        }
+
+        function addToCart(name, price) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart!');
+        }
+
+        displayMenu();
+    </script>
+     <div class="background-image"></div>
+    <footer>
+        <div class="container">
+          <p>&copy; 2024 Flavour Fusion. All rights reserved.</p>
+        </div>
+      </footer>
+</body>
+</html>
